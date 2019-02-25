@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+
+    input,form{
+        width: 100%;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+
+
+<form method="POST" enctype="multipart/form-data">
+    {{ form.as_p }}
+    {% csrf_token %}
+    <input type="submit" class="btn btn-info" value="ADD Employee">
+</form>
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+</body>
+{% endblock %}
+</html>

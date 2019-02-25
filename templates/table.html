@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block body_block %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+    table{
+        width: 100%;
+    }
+    #customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+    h1{
+        text-align: center;
+        color: #4CAF50;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+<div class="jumbotron">
+<h1><em>ALL EMPLOYEES</em></h1><br>
+    <table id="customers" border="2">
+        <thead>
+        <th> E.ID </th>
+        <th> Name</th>
+        <th> Designation</th>
+        <th> Manager </th>
+        <th> View </th>
+        </thead>
+
+         {% for x in employee_list %}
+             <tr>
+             <td>{{ x.id }}</td>
+             <td>{{ x.name }}</td>
+             <td>{{ x.designation }}</td>
+             <td>{{ x.reporting }}</td>
+             <td><a href="{{ x.id }}">View</a></td>
+
+</tr>
+  {% endfor %}
+    </table>
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+</body>
+
+{% endblock %}
+
+</html>
